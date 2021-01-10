@@ -1,22 +1,42 @@
 import React from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import Grid, { GridSpacing } from "@material-ui/core/Grid";
+import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
+import BackspaceOutlinedIcon from '@material-ui/icons/BackspaceOutlined';
+import IconButton from '@material-ui/core/IconButton';
+import Grow from '@material-ui/core/Grow';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
+      display: 'flex',
+      flexFlow: 'row wrap',
+      justifyContent: 'space-around',
     },
     paper: {
-      padding: theme.spacing(2),
       color: theme.palette.text.secondary,
+      textAlign: "center",
+      padding: 10,
+    },
+    button: {
+      padding: 0,
+      "& .MuiTouchRipple-root span": {
+        backgroundColor: theme.palette.primary,
+        color: theme.palette.background,
+        opacity: .8,
+      },
+      height: 56,
+      width: '100%',
     },
     text: {
-      padding: 10,
-      flexGrow: 1,
-      textAlign: "center",
+      fontWeight: 900,
+      color: theme.palette.text.primary,
+      alignContent: 'center',
+    },
+    back: {
+      padding: 0,
     },
   })
 );
@@ -24,21 +44,26 @@ const useStyles = makeStyles((theme: Theme) =>
 const InputGrid = () => {
   const classes = useStyles();
   return (
-    <Grid container className={classes.root} justify="center">
-      <Grid item xs={12}>
-        <Grid container justify="center">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, "forgot", 0, "delete"].map((value) => (
-            <Grid key={value} item xs={4}>
-              <Paper className={classes.paper}>
-                <Typography variant="h5" className={classes.text}>
-                  {value}
-                </Typography>
-              </Paper>
-            </Grid>
-          ))}
+    <Grow in={true}>
+      <Grid container className={classes.root} justify="center">
+        <Grid item xs={12}>
+          <Grid container justify="center">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, "forgot", 0, "delete"].map((value) => (
+              <Grid key={value} item xs={4}>
+                <Paper className={classes.paper}>
+                  <IconButton aria-label="delete" color="primary" className={classes.button}>
+                    {value === 'delete'
+                      ? <BackspaceOutlinedIcon className={classes.back} /> : <Typography variant="h5" className={classes.text}>
+                        {value}
+                      </Typography>}
+                  </IconButton>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </Grow>
   );
 };
 

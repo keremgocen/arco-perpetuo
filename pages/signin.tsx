@@ -52,7 +52,7 @@ const SignIn = () => {
   const classes = useStyles();
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main">
       <CssBaseline />
       <Paper className={classes.paper}>
         <Avatar className={classes.avatar}>

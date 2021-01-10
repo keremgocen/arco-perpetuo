@@ -6,20 +6,23 @@ import Box from "@material-ui/core/Box";
 const useStyles = makeStyles(() =>
   createStyles({
     root: {
-      justifyContent: "center",
-      padding: 60,
+      display: 'flex',
+      flexFlow: 'row wrap',
+      justifyContent: 'space-around',
+      padding: 50,
     },
     item: {
       margin: 3,
     },
     box: {
-      borderRadius: 3,
+      borderRadius: 4,
+      minWidth: 30,
+      minHeight: 30,
     },
   })
 );
 
 const InputGrid = () => {
-  // const [spacing] = React.useState<GridSpacing>(2);
   const classes = useStyles();
   return (
     <Grid container spacing={1} className={classes.root}>

@@ -20,7 +20,7 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: [
-      "ArcoPerpetuo",
+      "Arco Perpetuo Regular",
       "Roboto",
       "-apple-system",
       "BlinkMacSystemFont",
@@ -32,6 +32,13 @@ const theme = createMuiTheme({
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
     ].join(","),
+  },
+  props: {
+    // Name of the component ⚛️
+    MuiButtonBase: {
+      // The default props to change
+      disableRipple: false,
+    },
   },
 });
 
