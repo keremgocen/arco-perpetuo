@@ -23,7 +23,7 @@ const InputGrid = () => {
   const classes = useStyles();
   return (
     <Grid container spacing={1} className={classes.root}>
-      <Grid item xs={1} sm={2} className={classes.item}>
+      <Grid item xs={2} sm={2} className={classes.item}>
         <Box
           bgcolor="primary.main"
           color="primary.contrastText"
@@ -31,7 +31,7 @@ const InputGrid = () => {
           className={classes.box}
         />
       </Grid>
-      <Grid item xs={1} sm={2} className={classes.item}>
+      <Grid item xs={2} sm={2} className={classes.item}>
         <Box
           bgcolor="primary.main"
           color="secondary.contrastText"
@@ -39,7 +39,7 @@ const InputGrid = () => {
           className={classes.box}
         />
       </Grid>
-      <Grid item xs={1} sm={2} className={classes.item}>
+      <Grid item xs={2} sm={2} className={classes.item}>
         <Box
           bgcolor="primary.main"
           color="error.contrastText"
@@ -47,7 +47,7 @@ const InputGrid = () => {
           className={classes.box}
         />
       </Grid>
-      <Grid item xs={1} sm={2} className={classes.item}>
+      <Grid item xs={2} sm={2} className={classes.item}>
         <Box
           bgcolor="primary.main"
           color="warning.contrastText"
@@ -55,7 +55,7 @@ const InputGrid = () => {
           className={classes.box}
         />
       </Grid>
-      <Grid item xs={1} sm={2} className={classes.item}>
+      <Grid item xs={2} sm={2} className={classes.item}>
         <Box
           bgcolor="primary.main"
           color="warning.contrastText"

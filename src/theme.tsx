@@ -18,6 +18,21 @@ const theme = createMuiTheme({
       default: "#fff",
     },
   },
+  typography: {
+    fontFamily: [
+      "ArcoPerpetuo",
+      "Roboto",
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Segoe UI"',
+      "Arial",
+      '"Helvetica Neue"',
+      "sans-serif",
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(","),
+  },
 });
 
 export default theme;
