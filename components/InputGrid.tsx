@@ -9,11 +9,9 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
     },
     paper: {
-      padding: theme.spacing(5),
+      padding: theme.spacing(2),
       textAlign: 'center',
       color: theme.palette.text.secondary,
-      height: 50,
-      width: 50,
     },
     control: {
       padding: theme.spacing(4),
@@ -22,12 +20,11 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const InputGrid = () => {
-  const [spacing] = React.useState<GridSpacing>(2);
   const classes = useStyles();
   return (
-    <Grid container className={classes.root} spacing={2} justify="center">
+    <Grid container className={classes.root} justify="center">
       <Grid item xs={12}>
-        <Grid container justify="center" spacing={spacing}>
+        <Grid container justify="center">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 'forgot', 0, 'delete'].map((value) => (
             <Grid key={value} item xs={4}>
               <Paper className={classes.paper} >{value}</Paper>

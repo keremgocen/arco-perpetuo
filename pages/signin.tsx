@@ -12,7 +12,8 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import { Theme } from '@material-ui/core/styles/createMuiTheme';
+import Paper from "@material-ui/core/Paper";
+import { Theme } from "@material-ui/core/styles/createMuiTheme";
 
 function Copyright() {
   return (
@@ -47,13 +48,13 @@ const useStyles = makeStyles(({ palette, spacing }: Theme) => ({
   },
 }));
 
-export default function SignIn() {
+const SignIn = () => {
   const classes = useStyles();
 
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
-      <div className={classes.paper}>
+      <Paper className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
@@ -109,10 +110,12 @@ export default function SignIn() {
             </Grid>
           </Grid>
         </form>
-      </div>
+      </Paper>
       <Box mt={8}>
         <Copyright />
       </Box>
     </Container>
   );
-}
+};
+
+export default SignIn;
