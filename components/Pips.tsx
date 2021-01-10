@@ -1,9 +1,7 @@
 import React from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
 import CustomInput from "./CustomInput";
-import { grey } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -34,11 +32,6 @@ const InputGrid = () => {
     <Grid container spacing={1} className={classes.root}>
       {[0, 1, 2, 3, 4].map((value) => (
         <Grid item xs={2} sm={2} className={classes.item}>
-          {/* <Box
-            bgcolor={grey}
-            // color="primary.contrastText"
-            className={classes.box}
-          > */}
           <CustomInput
             variant="outlined"
             id="custom-css-outlined-input"
@@ -46,7 +39,6 @@ const InputGrid = () => {
             className={classes.box}
             autoFocus={false}
           />
-          {/* </Box> */}
         </Grid>
       ))}
     </Grid>
