@@ -15,7 +15,7 @@ import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import theme from "../src/theme";
 
 type Props = {
-  Component?: ElementType;
+  Component: ElementType;
   pageProps: object;
   title?: string;
 };

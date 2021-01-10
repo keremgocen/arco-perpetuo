@@ -21,7 +21,7 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "typescript": "4.0"
+    "typescript": "latest"
   },
   "license": "MIT"
 }
