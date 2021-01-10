@@ -1,9 +1,9 @@
 import React from "react";
-import { makeStyles, createStyles } from "@material-ui/core/styles";
+import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 
-const useStyles = makeStyles(() =>
+const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       display: 'flex',
@@ -12,7 +12,7 @@ const useStyles = makeStyles(() =>
       padding: 50,
     },
     item: {
-      margin: 3,
+      margin: theme.spacing(0),
     },
     box: {
       borderRadius: 4,

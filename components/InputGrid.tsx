@@ -1,11 +1,8 @@
 import React from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import BackspaceOutlinedIcon from '@material-ui/icons/BackspaceOutlined';
-import IconButton from '@material-ui/core/IconButton';
-import Grow from '@material-ui/core/Grow';
+import { Grid, Paper, IconButton, Grow } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -28,6 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
         opacity: .8,
       },
       height: 56,
+      maxWidth: 56,
       width: '100%',
     },
     text: {
