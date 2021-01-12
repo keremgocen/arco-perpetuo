@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import CustomInput from "./CustomInput";
+import TextField from "@material-ui/core/TextField";
+import { PinCodeContext } from '../hooks/PinCodeProvider'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -16,8 +17,14 @@ const useStyles = makeStyles((theme: Theme) =>
       width: 30,
       height: 30,
     },
-    box: {
-      backgroundColor: "lightgrey",
+    active: {
+      backgroundColor: theme.palette.primary.main,
+      borderRadius: 4,
+      minWidth: 10,
+      minHeight: 10,
+    },
+    dormant: {
+      backgroundColor: 'lightgrey',
       borderRadius: 4,
       minWidth: 10,
       minHeight: 10,
@@ -26,17 +33,18 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const InputGrid = () => {
-  const text = "12";
+  const { pinCode } = useContext(PinCodeContext);
   const classes = useStyles();
+
   return (
     <Grid container spacing={1} className={classes.root}>
       {[0, 1, 2, 3, 4].map((value) => (
-        <Grid item xs={2} sm={2} className={classes.item}>
-          <CustomInput
+        <Grid key={value} item xs={2} sm={2} className={classes.item}>
+          <TextField
             variant="outlined"
             id="custom-css-outlined-input"
-            disabled={text.length > value}
-            className={classes.box}
+            disabled={true}
+            className={pinCode && pinCode.length > value ? classes.active : classes.dormant}
             autoFocus={false}
           />
         </Grid>

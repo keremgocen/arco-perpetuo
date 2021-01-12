@@ -4,6 +4,7 @@ import InputGrid from "../components/InputGrid";
 import Pips from "../components/Pips";
 import Typography from "@material-ui/core/Typography";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
+import { PinCodeProvider } from '../hooks/PinCodeProvider';
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -37,8 +38,10 @@ const IndexPage = () => {
           This is the code you chose when you created your account.
         </Typography>
       </div>
-      <Pips />
-      <InputGrid />
+      <PinCodeProvider>
+        <Pips />
+        <InputGrid />
+      </PinCodeProvider>
       {/* <SignIn /> */}
     </Container>
   );
