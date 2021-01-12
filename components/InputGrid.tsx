@@ -65,7 +65,7 @@ const InputGrid = () => {
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, "forgot", 0, "delete"].map((value) => (
               <Grid key={value} item xs={4}>
                 <Paper className={classes.paper}>
-                  <IconButton aria-label="delete" color="primary" className={classes.button} onTouchEnd={() => onInput(value)}>
+                  <IconButton aria-label="delete" color="primary" className={classes.button} onClick={() => onInput(value)}>
                     {value === 'delete'
                       ? <BackspaceOutlinedIcon className={classes.back} /> : <Typography variant="h5" className={classes.text}>
                         {value}
