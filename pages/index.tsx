@@ -1,17 +1,50 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
-import SignIn from './signin'
+import React from "react";
+import Container from "@material-ui/core/Container";
+import InputGrid from "../components/InputGrid";
+import Pips from "../components/Pips";
+import Typography from "@material-ui/core/Typography";
+import { createStyles, makeStyles } from "@material-ui/core/styles";
+import { PinCodeProvider } from '../hooks/PinCodeProvider';
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-    <SignIn />
-  </Layout>
-)
+const useStyles = makeStyles(() =>
+  createStyles({
+    root: {
+      display: 'flex',
+      flexFlow: 'wrap',
+      height: '100vh',
+    },
+    textContainer: {
+      display: 'flex',
+      flexFlow: 'column wrap',
+    },
+    text: {
+      padding: 10,
+      flexGrow: 1,
+      textAlign: "left",
+    },
+  })
+);
 
-export default IndexPage
+const IndexPage = () => {
+  const classes = useStyles();
+
+  return (
+    <Container component="main" className={classes.root}>
+      <div className={classes.textContainer}>
+        <Typography variant="h3" className={classes.text}>
+          Enter your 5 digit code
+        </Typography>
+        <Typography variant="h6" className={classes.text}>
+          This is the code you chose when you created your account.
+        </Typography>
+      </div>
+      <PinCodeProvider>
+        <Pips />
+        <InputGrid />
+      </PinCodeProvider>
+      {/* <SignIn /> */}
+    </Container>
+  );
+};
+
+export default IndexPage;
