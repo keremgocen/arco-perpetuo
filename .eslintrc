@@ -1,11 +1,5 @@
 {
-  "plugins": ["css-modules"],
-  "extends": [
-    "react-app",
-    "prettier",
-    "plugin:css-modules/recommended",
-    "plugin:import/typescript"
-  ],
+  "extends": ["react-app", "prettier", "plugin:import/typescript"],
   "rules": {
     "no-const-assign": "error",
     "import/no-anonymous-default-export": "error",
@@ -15,10 +9,6 @@
       { "newlines-between": "always", "alphabetize": { "order": "asc" } }
     ],
     "import/no-duplicates": "error",
-    "import/no-cycle": "error",
-    "react-hooks/exhaustive-deps": [
-      "error",
-      { "additionalHooks": "useCustomCompareMemo" }
-    ]
+    "import/no-cycle": "error"
   }
 }
